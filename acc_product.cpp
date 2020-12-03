@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include "acc_product.h"
-#include "buy_product.h"
-#include "sale_product.h"
+#include "buy_product.cpp"
+#include "sale_product.cpp"
 
 using namespace std;
 
