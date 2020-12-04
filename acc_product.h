@@ -6,12 +6,11 @@
 
 struct Product 
 {
-    int codProduct = 0;
-    int articleProduct = 0;
-    std::string nameProduct;
-    double cntProduct = 0.00;
-    double costBuyProduct = 0.00;
-    double costSaleProduct = 0.00;
+  int articleProduct = 0;
+  std::string nameProduct;
+  int cntProduct = 0;
+  double costBuyProduct = 0;
+  double costSaleProduct = 0;
 };
 
 #endif
