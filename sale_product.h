@@ -6,6 +6,6 @@
 
 #include "acc_product.h"
 
-double saleProduct(Product, Product);
+double saleProduct(Product);
 
 #endif

@@ -1,20 +1,47 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "acc_product.h"
 #include "buy_product.h"
 
-double buyProduct(Product x, Product y) 
+double buyProduct(Product x) 
 {
+  std::vector<int> articleProduct;
+  std::vector<std::string> nameProduct;
+  std::vector<int> cntProduct;
+  std::vector<double> costBuyProduct;
+  double sumBuy = 0;
+  
   setlocale(LC_ALL, "RUS"); 
+  std::cout << "Введите данные о купленных товарах \n";
 
-  std::cout << "Введите данные о купленных товарах \n(Артикул товара, наименование товара," << 
-  "количество товара, цена приобретения за ед. товара):\n";
+  while (std::cin)
+  {
+    std::cout << "Артикул товара: ";
+    std::cin >> x.articleProduct;
+    articleProduct.push_back(x.articleProduct);
+    std::cin.ignore(32767, '\n');
+    std::cout << "Наименование товара: ";
+    getline(std::cin, x.nameProduct);
+    nameProduct.push_back(x.nameProduct);
+    std::cout << "Количество товара: ";
+    std::cin >> x.cntProduct;
+    cntProduct.push_back(x.cntProduct);
+    std::cout << "Цена приобретения за ед. товара: ";
+    std::cin >> x.costBuyProduct;
+    costBuyProduct.push_back(x.costBuyProduct);
 
-  std::cin >> x.articleProduct >> x.nameProduct >> x.cntProduct >> x.costBuyProduct;
-  std::cin >> y.articleProduct >> y.nameProduct >> y.cntProduct >> y.costBuyProduct;
-
-  double sumBuy = x.cntProduct * x.costBuyProduct + y.cntProduct * y.costBuyProduct;
-
+    sumBuy += (x.cntProduct * x.costBuyProduct);
+    
+    std::cout << "\n";
+    std::cout << "Нажмите 1, чтобы продолжить ввод Купленных товаров, или любую клавишу, чтобы закончить\n";
+    std::string ch;
+    std::cin >> ch;
+    if (ch [0] == '1')
+      continue;
+    if (ch [0]!= '1')
+      break;
+  }
   return sumBuy;
 }

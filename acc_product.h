@@ -11,6 +11,8 @@ struct Product
   int cntProduct = 0;
   double costBuyProduct = 0;
   double costSaleProduct = 0;
+  std::string nameOfIndirectCosts;
+  double indirectCosts;
 };
 
 #endif

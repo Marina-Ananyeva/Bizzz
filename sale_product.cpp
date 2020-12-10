@@ -1,21 +1,47 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "acc_product.h"
 #include "sale_product.h"
 
-double saleProduct(Product a, Product b) 
+double saleProduct(Product z) 
 {
-  setlocale(LC_ALL, "RUS");
+  std::vector<int> articleProduct;
+  std::vector<std::string> nameProduct;
+  std::vector<int> cntProduct;
+  std::vector<double> costSaleProduct;
+  double sumSale = 0;
+  
+  setlocale(LC_ALL, "RUS"); 
+  std::cout << "Введите данные о проданных товарах \n";
 
-  std::cout << "\nВведите данные о проданных товарах \n(Артикул товара, наименование товара," << 
-  "количество товара, цена реализации за ед. товара):\n";
+  while (std::cin)
+  {
+    std::cout << "Артикул товара: ";
+    std::cin >> z.articleProduct;
+    articleProduct.push_back(z.articleProduct);
+    std::cin.ignore(32767, '\n');
+    std::cout << "Наименование товара: ";
+    getline(std::cin, z.nameProduct);
+    nameProduct.push_back(z.nameProduct);
+    std::cout << "Количество товара: ";
+    std::cin >> z.cntProduct;
+    cntProduct.push_back(z.cntProduct);
+    std::cout << "Цена реализации за ед. товара: ";
+    std::cin >> z.costSaleProduct;
+    costSaleProduct.push_back(z.costSaleProduct);
 
-  std::cin >> a.articleProduct >> a.nameProduct >> a.cntProduct >> a.costSaleProduct;
-  std::cin >> b.articleProduct >> b.nameProduct >> b.cntProduct >> b.costSaleProduct;
-
-  double sumSale = a.cntProduct * a.costSaleProduct + b.cntProduct * b.costSaleProduct;
-
+    sumSale += (z.cntProduct * z.costSaleProduct);
+    
+    std::cout << "\n";
+    std::cout << "Нажмите 1, чтобы продолжить ввод Проданных товаров, или любую клавишу, чтобы закончить\n";
+    std::string ch;
+    std::cin >> ch;
+    if (ch [0] == '1')
+      continue;
+    if (ch [0]!= '1')
+      break;
+  }
   return sumSale;
-
 }

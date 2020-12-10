@@ -6,6 +6,6 @@
 
 #include "acc_product.h"
 
-double indirectCost (double, double);
+double indirectCost (Product);
 
 #endif
