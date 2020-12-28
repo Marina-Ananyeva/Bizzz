@@ -9,3 +9,7 @@
 double indirectCost (Product);
 
 #endif
+
+
+//std::string nameOfIndirectCosts;
+//double indirectCosts;

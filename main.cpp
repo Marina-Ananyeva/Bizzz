@@ -3,18 +3,18 @@
 #include <vector>
 #include <iomanip>
 
-#include "acc_product.h"
 #include "constants.h"
+#include "buy_product.h"
 #include "buy_product.cpp"
-#include "sale_product.cpp"
-#include "indirect_costs.cpp"
-#include "tax.cpp"
+//#include "sale_product.cpp"
+//#include "indirect_costs.cpp"
+//#include "tax.cpp"
 
 int main () 
 {
   setlocale(LC_ALL, "RUS");
 
-  Product prod1;
+/*  Product prod1;
   
   double sumBuy = buyProduct(prod1);
   Product prod2;
@@ -46,7 +46,7 @@ int main ()
   std::cout << string1 << std::endl;
   std::cout << "|| ЧИСТАЯ ПРИБЫЛЬ:\t\t" << std::fixed << std::setprecision(2) << "||\t" << netIncome << " руб.\t\t" << "||" << std::endl;
   std::cout << string1 << std::endl;
-  std::cout << "\n\n\n" << std::endl;
+  std::cout << "\n\n\n" << std::endl;*/
   return 0;
 
 }
