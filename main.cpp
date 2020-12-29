@@ -6,6 +6,7 @@
 #include "constants.h"
 #include "buy_product.h"
 #include "buy_product.cpp"
+//#include "data.h"
 //#include "sale_product.cpp"
 //#include "indirect_costs.cpp"
 //#include "tax.cpp"
@@ -13,8 +14,37 @@
 int main () 
 {
   setlocale(LC_ALL, "RUS");
+  Buy_product total(std::cin);
+  double sum = 0;
+  sum = sumBuy(sum, total);
+  if (std::cin)
+  {
+    while (std::cin)
+    {
+      Buy_product trans(std::cin);
+      sum = sumBuy(sum, trans);
+      if (total.get_articleProduct() == trans.get_articleProduct())
+      {
+        total = add(total, trans);
+      }
+      else
+      {
+        print(std::cout, total) << std::endl;
+        total = trans;
+      }
+    }
+    //print(std::cout, total) << std::endl;
+  }
+  else 
+  {
+    std::cerr << "No data?!" << std::endl;
+    return -1;
+  }
+  print_sum(std::cout, sum) << std::endl;
+  return 0;
+}
 
-/*  Product prod1;
+  /*  Product prod1;
   
   double sumBuy = buyProduct(prod1);
   Product prod2;
@@ -47,6 +77,5 @@ int main ()
   std::cout << "|| ЧИСТАЯ ПРИБЫЛЬ:\t\t" << std::fixed << std::setprecision(2) << "||\t" << netIncome << " руб.\t\t" << "||" << std::endl;
   std::cout << string1 << std::endl;
   std::cout << "\n\n\n" << std::endl;*/
-  return 0;
 
-}
+
